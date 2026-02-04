@@ -15,13 +15,15 @@ class NetworkSecurityException(Exception):
         self.file_name,self.lineno,str(self.error_message))
         
 
-if __name__=='__main__':
-    try:
+# if __name__=='__main__':
+#     try:
         
-        logger.logging.info("Entered the try block")
+#         logger.logging.info("Entered the try block")
         
-        a=1/0
-        print("This will not be printed ",a)
-    except Exception as e:
-        raise NetworkSecurityException(e,sys)
+#         a=1/0
+#         print("This will not be printed ",a)
+#     except Exception as e:
+#         raise NetworkSecurityException(e,sys)
+        
+        
         
