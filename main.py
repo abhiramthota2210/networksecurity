@@ -4,6 +4,9 @@ from networksecurity.exception.exception import NetworkSecurityException
 from networksecurity.components.data_validation import DataValidation,DataValidationConfig
 from networksecurity.logging.logger import logging
 from networksecurity.entity.config_entity import TrainingPipelineConfig
+from networksecurity.components.data_transformation import DataTransformation,DataTransformationConfig,DataTransformationArtifact
+
+
 import sys
 if __name__=='__main__':
     try:
@@ -22,6 +25,13 @@ if __name__=='__main__':
         data_validatoin_artifact=data_validation.initiate_data_validation()
         print(data_validatoin_artifact)
         logging.info("Data validation completed")
+        logging.info("Initiate data Transformation")
+
+        data_transformation_config=DataTransformationConfig(training_pipeline_config)
+        data_transformation=DataTransformation(data_validatoin_artifact,data_transformation_config)
+        data_transformation_artifact=data_transformation.initiate_data_transformation()
+        print(data_transformation_artifact)
+        logging.info("Completed Data Transformation")
 
         
     except Exception as e:

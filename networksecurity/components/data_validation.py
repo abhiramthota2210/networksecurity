@@ -68,8 +68,6 @@ class DataValidation:
             os.makedirs(dir_path,exist_ok=True)
             write_yaml_file(drift_report_file_path,content=report)
             
-            
-            
         except Exception as e:
             raise NetworkSecurityException(e,sys)
         
